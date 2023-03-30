@@ -65,7 +65,7 @@ Data cleaning and feature engineering methods are described separately for each 
 
 **Form and Rest Sub-Dataset**: k-Nearest Neighbors classifier achieved the highest test accuracy of **54.5%**, combined with normalization for feature scaling and random forest-based feature selection.*
 
-**Stats Sub-Dataset**: Multinomial Logistic regression classifier achieved the best test accuracy of **52.7%**, combined with standardization for feature scaling and F-test feature selection (no nominal attributes were present in the feature set, eliminating the need for any categorical encoding technique in the grid search). *
+**Stats Sub-Dataset**: Multinomial Logistic regression classifier achieved the best test accuracy of **52.7%**, combined with standardization for feature scaling and F-test feature selection. *
 
 **Odds Sub-Dataset**: k-Nearest Neighbors classifier achieved the highest test accuracy of **60.0%**, combined with standardization for feature scaling and random forest-based feature selection. *
 
@@ -74,7 +74,7 @@ Data cleaning and feature engineering methods are described separately for each 
 **Player Attributes Sub-Dataset**: Multinomial Logistic regression classifier achieved the best test accuracy of **54.2%**, combined with One-Hot encoding for categorical variables, standardization for feature scaling, and no feature selection technique since a better performance was accomplished using the entire feature space instead of a subset.
 
 **Comprehensive Dataset**: Multinomial Logistic regression classifier achieved the best test accuracy of **60.7%**, combined with One-Hot encoding for categorical variables, normalization for feature scaling, and random forest-based feature selection, which selected 110 out of the 2,105 initial features.  
-** No categorical encoding method was needed in the grid search due to the characteristics of the considered dataset*
+* *No categorical encoding method was needed in the grid search due to the characteristics of the considered dataset*
 
 
 ![mat](https://user-images.githubusercontent.com/80990030/228986342-7a2dc27f-e314-4951-8937-8b6dc32f1606.png)
