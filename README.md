@@ -24,9 +24,9 @@ This work explores using Machine Learning to predict football match outcomes in 
 Our study collected and analyzed football match data from the top five European leagues (Bundesliga, La Liga, Ligue 1, Premier League, and Serie A) from the 2016/2017 season to the 2021/2022 season. The scope of our research did not include games from domestic and European cups. However,  observations from these competitions were nevertheless considered to create several features employed in the study.  
 
 The data was gathered from three online sources: 
-- Sportmonks football API [link](https://docs.sportmonks.com/football/)
-- FIFA index website [link](https://www.fifaindex.com/)
-- Visual Crossing Weather API [link](https://www.visualcrossing.com/weather-api) 
+- [Sportmonks football API](https://docs.sportmonks.com/football/)
+- [FIFA index website](https://www.fifaindex.com/)
+- [Visual Crossing Weather API](https://www.visualcrossing.com/weather-api) 
 
 From the Sportmonks football API, we acquired detailed information about football fixtures, including game results, statistics, betting odds, in-game events, and starting lineup players. 
 The FIFA index website contains details from the FIFA video games series referring to both teams' and players' attributes. The information from this source was extracted through web scraping, a technique to collect large amounts of internet data automatically. The scraped data was organized into two separate databases: one for teams with approximately 82,000 observations and one for players with roughly 1,250,000 instances. 
@@ -46,8 +46,7 @@ The literature on football match prediction has been afflicted by the inability 
 design of the included information or sharing a particular affinity.
 Another crucial novelty of our approach derives from utilizing a vast and comprehensive dataset. While previous studies have, in a few cases, used datasets of larger size in terms of the number of matches than our dataset, this study is novel in considering a more extensive feature space. This analysis significantly increased the data dimensionality by almost an order of magnitude compared to prior studies. 
 
-A shared set of techniques was  employed throughout this study to ensure comparability across the results obtained from different datasets, including all the subsets and the comprehensive dataset. To serve as a benchmark, we supposed a model that solely predicts this class as a reference for submodel performances (44.3% accuracy). 
-
+A shared set of techniques was  employed throughout this study to ensure comparability across the results obtained from different datasets, including all the subsets and the comprehensive dataset. 
 The first step of our standard approach was an 80/20 split of the available data into separate training and testing sets through stratified sampling.
 After the split and to conduct an exhaustive analysis, we employed a systematic procedure to identify the optimal model while improving its robustness and generalization. This approach involved a grid search, with five-fold cross-validation for evaluation, over various preprocessing techniques and classification  algorithms. Additionally, hyperparameter tuning was  applied for each model to enhance its performance. 
 The grid search considers various preprocessing techniques, such as categorical encoding (one-hot and ordinal) and feature scaling (normalization  and  standardization). Also, dimensionality reduction methods were assessed, including feature extraction (PCA) and feature selection processes (mutual 
@@ -76,8 +75,10 @@ Data cleaning and feature engineering methods are described separately for each 
 
 **Comprehensive Dataset**: Multinomial Logistic regression classifier achieved the best test accuracy of 60.7%, combined with One-Hot encoding for categorical variables, normalization for feature scaling, and random forest-based feature selection, which selected 110 out of the 2,105 initial features.  
 
-![10](https://user-images.githubusercontent.com/80990030/228922007-8ef08510-efba-46a5-b583-4f9945e380d7.png)
+
+![mat](https://user-images.githubusercontent.com/80990030/228986342-7a2dc27f-e314-4951-8937-8b6dc32f1606.png)
 Figure 9 represents the confusion matrix for the best model trained on the comprehensive dataset, which is a tabular summary of its performance. As emphasized in the literature, football match prediction presents unique challenges due to its low-scoring nature, especially when considering draws in a multiclass design. The main issue in multiclass football match prediction is the complexity added when considering draws, which is the class where the comprehensive model severely underperforms. 
+
 
 
 ![comp](https://user-images.githubusercontent.com/80990030/228985611-a1ba0764-7b5a-479f-944a-6e3816dbdab0.png)
