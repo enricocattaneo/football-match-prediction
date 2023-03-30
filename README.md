@@ -1,16 +1,22 @@
 # Football Match Prediction
 
-**ABSTRACT**: This work explores using Machine Learning to predict football match outcomes in the top five European leagues from season 2016/2017 to 2021/2022. The study aims to expand on previous literature by analyzing a more extensive range of football-related features and assessing the predictive power of different football knowledge forms to understand  better  the  various  components  of  match  information  and  the  overall application domain. Hence, the analysis was conducted on two levels: first, splitting the data into seven subsets, each containing a reduced feature space, and then aggregating them into a comprehensive dataset. Several combinations of classification algorithms and preprocessing  techniques,  such  as  categorical  encoding,  feature  scaling,  and dimensionality  reduction,  were  tested  on  each  set  in  a  structured  way,  enabling comparisons.  The models trained on different sub-datasets achieved varying levels of test accuracy, ranging from 48.7% for the Venue set, 53.9% for the Standings set, 54.5% for the Form and Rest set, 52.7% for the Stats set, 60.0% for the Betting Odds set, 54.1% for the Team Attributes set, and 54.2% for the Player Attributes set. In comparison, the model trained on the Comprehensive dataset accomplished a test accuracy of 60.7%. The process of generating  such  results  provides  critical  insights  for  further  research  on  practical applications by uncovering the predictive ability of the diverse feature spaces. Moreover, based on the comprehensive dataset, the best-performing model performs satisfactorily, especially compared to prior multiclass analyses. Its potential practical utilization in future studies could be of interest, mainly to investigate its effectiveness in identifying betting strategies. 
-
-For a more detailed description of this work, please read the thesis.pdf file. However, please note that there may be some minor differences between the results presented in the thesis.pdf file and those obtained using the provided data and code. These differences are due to some minor changes that were made to the data preparation processes after the paper was written.
+###### *For a more detailed description of this work, please read the thesis.pdf file. However, please note that there may be some minor differences between the results presented in the thesis.pdf file and those obtained using the provided data and code. These differences are due to some minor changes that were made to the data preparation processes after the paper was written.*
 
 ## Table of Contents
 
+- [Abstract](#abstract)
 - [Data Sources](#datasources)
 - [Methodology](#methodology)
 - [Classification Models](#classificationmodels)
 - [Results](#results)
 - [Conclusions](#conclusions)
+
+
+<a id='abstract'></a>
+## Abstract
+
+This work explores using Machine Learning to predict football match outcomes in the top five European leagues from season 2016/2017 to 2021/2022. The study aims to expand on previous literature by analyzing a more extensive range of football-related features and assessing the predictive power of different football knowledge forms to understand  better  the  various  components  of  match  information  and  the  overall application domain. Hence, the analysis was conducted on two levels: first, splitting the data into seven subsets, each containing a reduced feature space, and then aggregating them into a comprehensive dataset. Several combinations of classification algorithms and preprocessing  techniques,  such  as  categorical  encoding,  feature  scaling,  and dimensionality  reduction,  were  tested  on  each  set  in  a  structured  way,  enabling comparisons.  The models trained on different sub-datasets achieved varying levels of test accuracy, ranging from 48.7% for the Venue set, 53.9% for the Standings set, 54.5% for the Form and Rest set, 52.7% for the Stats set, 60.0% for the Betting Odds set, 54.1% for the Team Attributes set, and 54.2% for the Player Attributes set. In comparison, the model trained on the Comprehensive dataset accomplished a test accuracy of 60.7%. The process of generating  such  results  provides  critical  insights  for  further  research  on  practical applications by uncovering the predictive ability of the diverse feature spaces. Moreover, based on the comprehensive dataset, the best-performing model performs satisfactorily, especially compared to prior multiclass analyses. Its potential practical utilization in future studies could be of interest, mainly to investigate its effectiveness in identifying betting strategies. 
+
 
 
 <a id='datasources'></a>
@@ -21,13 +27,14 @@ The data was gathered from three online sources:
 - Sportmonks football API [link](https://docs.sportmonks.com/football/)
 - FIFA index website [link](https://www.fifaindex.com/)
 - Visual Crossing Weather API [link](https://www.visualcrossing.com/weather-api) 
+
 From the Sportmonks football API, we acquired detailed information about football fixtures, including game results, statistics, betting odds, in-game events, and starting lineup players. 
 The FIFA index website contains details from the FIFA video games series referring to both teams' and players' attributes. The information from this source was extracted through web scraping, a technique to collect large amounts of internet data automatically. The scraped data was organized into two separate databases: one for teams with approximately 82,000 observations and one for players with roughly 1,250,000 instances. 
 From the Visual Crossing Weather API, we attained meteorological variables referring to the weather conditions for the matches considered in our analysis. 
 
 A total of 10,536 matches were considered in this analysis. 
-
 ![data_sources_plot](https://user-images.githubusercontent.com/80990030/228912418-852a7749-d4d3-48cb-8a37-c23b9834400c.png)
+
 
 
 <a id='methodology'></a>
@@ -79,6 +86,7 @@ The plot also provides information on the number of features selected via dimens
 Interestingly, the best performances across different feature sets were obtained predominantly by implementing either Multinomial Logistic regression classifiers or k-Nearest Neighbors classifiers, while only once with a Random Forest classifier and never with the other considered classification algorithms. 
 Furthermore, it is worth noting that feature selection methods outperformed feature extraction techniques using Principal Component Analysis in all the analyzed feature sets. These findings suggest that Multinomial Logistic regression or k-Nearest Neighbors classifiers, combined with feature selection methods, are most effective in predicting football outcomes. In contrast, feature extraction techniques using PCA may be less effective in this context.  
 The model trained on the comprehensive dataset outperformed all the models trained on sub-datasets. This model also performed better than most prior multiclass match prediction studies in the literature.  
+
 
 
 <a id='conclusions'></a>
