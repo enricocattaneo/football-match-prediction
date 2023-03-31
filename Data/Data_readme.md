@@ -1,0 +1,1 @@
+###### *Due to its dimension, the Data directory is stored at https://www.kaggle.com/datasets/enricocattaneo/data-football-match-prediction. Import the directory from the link and substitute the empty **Data** directory with it, maintaining its Position and Name in the Main directory (new directory name is still Data).*
