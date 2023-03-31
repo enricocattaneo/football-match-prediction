@@ -1,7 +1,7 @@
 # Football Match Prediction
 
 
-###### Due to its dimension, the data directory is stored at https://www.kaggle.com/datasets/enricocattaneo/data-football-match-prediction. Import the directory from the link and substitute the empty **Data** directory with it, maintaining its Position and Name in the Main directory.
+###### *Due to its dimension, the data directory is stored at https://www.kaggle.com/datasets/enricocattaneo/data-football-match-prediction. Import the directory from the link and substitute the empty **Data** directory with it, maintaining its Position and Name in the Main directory.*
 
 
 ###### *For a more detailed description of this work, please read the thesis.pdf file. However, please note that there may be some minor differences between the results presented in the thesis.pdf file and those obtained using the provided data and code. These differences are due to some minor changes that were made to the data preparation processes after the paper was written.*
